@@ -1,4 +1,11 @@
 # Debate Aberto
+A possibilidade de transmitir eventos em tempo real e criar um ambiente de interação nem sempre é aproveitada pelas organizações por falta de uma plataforma tecnologica que seja simples e funcional. Muitas vezes acabam adotando sites baseados em softwares proprietários, cheios de propagandas e com interfaces poluidas. 
+
+A plataforma para incorporação de vídeos e realização de chats DebateAberto.org busca atender essa demanda de forma simples. Instale no seu servidor e rode seu evento de forma pública e interativa. A interface do DebateAberto.org destaca o espaço do vídeo e do chat, permitindo ainda a integração do "twitter stream" com a hashtag do evento e um espaço para postar a programação do dia (os participantes no chat sempre perguntam "qual a próxima palestra" ou "quem está falando" rsrsrsrs).
+
+Aviso aos navegantes: O projeto DebateAberto.org ainda não integra um servidor gerador do sinal de áudio e vídeo (ICECAST por exemplo). Para ele funcionar é necessário que o vídeo esteja sendo gerado em outro sistema.
+
+Para ver ele funcionando, acesse [DebateAberto.org] (http://debateaberto.org)
 
 # Depêndencias
 1. [Ruby 1.9.x](http://ruby-lang.org)
