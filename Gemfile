@@ -4,6 +4,13 @@ gem 'rails', '3.2.3'
 gem 'sqlite3', group: :development
 gem 'devise'
 gem 'cancan'
+gem 'rspec-rails', group: [:development, :test]
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+end
 
 group :production do
   gem 'thin'
