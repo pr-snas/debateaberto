@@ -2,18 +2,15 @@ Debateaberto::Application.routes.draw do
   devise_for :usuarios, skip: [:sessions, :passwords, :registrations]
   devise_scope :usuario do
     # login/logout
-    get '/entrar' => 'devise/sessions#new', as: :new_usuario_session
     post '/entrar' => 'devise/sessions#create', as: :usuario_session
     delete '/sair' => 'devise/sessions#destroy', as: :destroy_usuario_session
     
     # resetar/trocar senha
-    get '/recuperar_senha' => 'devise/passwords#new', as: :new_usuario_password
     post '/recuperar_senha' => 'devise/passwords#create', as: :usuario_password
     get '/minha_conta/senha/editar' => 'devise/passwords#edit', as: :edit_usuario_password
     put '/minha_conta/senha/editar' => 'devise/passwords#update'
 
     # configurações do usuário
-    get '/cadastrar' => 'devise/registrations#new', as: :new_usuario_registration
     post '/cadastrar' => 'devise/registrations#create', as: :usuario_registration
     get '/minha_conta/editar' => 'devise/registrations#edit', as: :edit_usuario_registration
     put '/minha_conta' => 'devise/registrations#update'
