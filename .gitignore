@@ -16,3 +16,5 @@
 
 /config/database.yml
 /config/facebook.yml
+
+/app/assets/images/icones-*.png
