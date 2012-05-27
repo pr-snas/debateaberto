@@ -1,23 +1,24 @@
 Debateaberto::Application.routes.draw do
+  devise_for :usuarios#, skip: [:sessions, :passwords, :registrations]
   devise_scope :usuario do
     # login/logout
-    get '/entrar' => 'devise/sessions#new', as: :nova_sessao
-    post '/entrar' => 'devise/sessions#new', as: :criar_sessao
-    delete '/sair' => 'devise/sessions#destroy', as: :destruir_sessao
+    get '/entrar' => 'devise/sessions#new', as: :new_usuario_session
+    post '/entrar' => 'devise/sessions#create', as: :usuario_session
+    delete '/sair' => 'devise/sessions#destroy', as: :destroy_usuario_session
     
     # resetar/trocar senha
-    get '/senha/nova' => 'devise/passwords#new', as: :nova_senha
-    post '/senha/nova' => 'devise/passwords#create', as: :criar_senha
-    get '/senha/editar' => 'devise/passwords#edit', as: :editar_senha
-    put '/senha/editar' => 'devise/passwords#update', as: :atualizar_senha
+    get '/recuperar_senha' => 'devise/passwords#new', as: :new_usuario_password
+    post '/recuperar_senha' => 'devise/passwords#create', as: :usuario_password
+    get '/minha_conta/senha/editar' => 'devise/passwords#edit', as: :edit_usuario_password
+    put '/minha_conta/senha/editar' => 'devise/passwords#update'
 
     # configurações do usuário
-    get '/cadastro' => 'devise/registrations#new', as: :novo_usuario
-    post '/cadastro' => 'devise/registrations#create', as: :criar_usuario
-    get '/editar' => 'devise/registrations#edit', as: :editar_usuario
-    post '' => 'devise/registrations#update', as: :atualizar_usuario
-    get '/cancelar' => 'devise/registrations#cancel', as: :cancelar_usuario
-    delete '' => 'devise/registrations#destroy', as: :destruir_usuario
+    get '/cadastrar' => 'devise/registrations#new', as: :new_usuario_registration
+    post '/cadastrar' => 'devise/registrations#create', as: :usuario_registration
+    get '/minha_conta/editar' => 'devise/registrations#edit', as: :edit_usuario_registration
+    put '/minha_conta' => 'devise/registrations#update'
+    get '/minha_conta/cancelar' => 'devise/registrations#cancel', as: :cancel_usuario_registration
+    delete '/minha_conta' => 'devise/registrations#destroy'
   end
 
   root to: 'home#index'
