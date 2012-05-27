@@ -1,16 +1,36 @@
+@import 'icones/*.png';
+
 #entrar {
   p {
     margin-bottom: 0;
   }
 
   .provedores {
-    margin: 0 0 9px;
+    margin: 5px 0 18px;
     overflow: hidden;
 
     li {
       list-style: none;
       float: left;
-      margin-right: 5px;
+      margin-right: 7px;
+
+      a {
+        display: block;
+        width: 24px;
+        height: 24px;
+        overflow: hidden;
+        text-indent: -999em;
+      }
+
+      .facebook  { @include icones-sprite(facebook) }
+      .twitter { @include icones-sprite(twitter) }
+      .google { @include icones-sprite(google) }
+      .yahoo { @include icones-sprite(yahoo) }
+      .openid { @include icones-sprite(openid) }
     }
+  }
+
+  .recuperar {
+    margin-top: 5px;
   }
 }
