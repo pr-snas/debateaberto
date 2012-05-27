@@ -25,6 +25,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'compass-rails'
   gem 'compass_twitter_bootstrap'
+  gem 'handlebars_assets'
 end
 
 gem 'jquery-rails'
