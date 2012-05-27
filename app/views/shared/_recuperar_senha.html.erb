@@ -1,0 +1,24 @@
+<div class="modal-header">
+  <button class="close" data-dismiss="modal">×</button>
+  <h1>Recuperar senha</h1>
+</div>
+
+<%= form_tag usuario_password_path do %>
+  <div class="modal-body">
+    <p>Informe o e-mail da sua conta para que possamos lhe enviar por e-mail
+      os próximos passos para recuperar sua senha.</p>
+
+    <div class="control-group">
+      <%= label_tag 'usuario_email', 'E-mail da sua conta:' %>
+      <div class="controls">
+        <%= email_field_tag 'usuario[email]', nil, required: true, autofocus: true,
+          pattern: '^[a-zA-Z0-9-\_.]+@[a-zA-Z0-9-\_.]+\.[a-zA-Z0-9.]{2,5}$' %>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <%= link_to 'Cancelar', '#', 'data-dismiss' => 'modal', class: 'btn' %>
+    <%= submit_tag 'Recuperar', class: 'btn btn-primary' %>
+  </div>
+<% end %>

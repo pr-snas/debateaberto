@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Debate Aberto</a>
+          <a class="brand" href="<%= root_url %>">Debate Aberto</a>
           <div class="container nav-collapse">
             <form class="navbar-search pull-left" action="#">
               <input type="text" class="search-query" placeholder="Pesquisar...">
@@ -33,7 +33,7 @@
               <li><%= link_to 'Criar um canal', '#'  %></li>
             </ul>
             <ul class="nav pull-right">
-              <li><%= link_to 'Entrar / Cadastro', '#' %></li>
+              <li><%= link_to 'Entrar / Cadastro', '#entrar', 'data-toggle' => 'modal' %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -57,6 +57,18 @@
       </footer>
 
     </div> <!-- /container -->
+
+    <div class="modal hide" id="entrar">
+      <%= render 'shared/entrar' %>
+    </div>
+
+    <div class="modal hide" id="cadastrar">
+      <%= render 'shared/cadastrar' %>
+    </div>
+
+    <div class="modal hide" id="recuperar_senha">
+      <%= render 'shared/recuperar_senha' %>
+    </div>
 
     <!-- Javascripts
     ================================================== -->

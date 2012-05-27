@@ -1,0 +1,44 @@
+<div class="modal-header">
+  <button class="close" data-dismiss="modal">×</button>
+  <h1>Cadastrar</h1>
+</div>
+
+<%= form_tag usuario_registration_path do %>
+  <div class="modal-body">
+    <div class="control-group">
+      <%= label_tag 'usuario_nome', 'Nome:' %>
+      <div class="controls">
+        <%= text_field_tag 'usuario[nome]', nil, required: true, autofocus: true %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= label_tag 'usuario_email_cadastro', 'E-mail:' %>
+      <div class="controls">
+        <%= email_field_tag 'usuario[email]', nil, required: true,
+          pattern: '^[a-zA-Z0-9-\_.]+@[a-zA-Z0-9-\_.]+\.[a-zA-Z0-9.]{2,5}$',
+          id: :usuario_email_cadastro %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= label_tag 'usuario_password_cadastro', 'Senha:' %>
+      <div class="controls">
+        <%= password_field_tag 'usuario[password]', nil, required: true,
+          id: :usuario_password_cadastro %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= label_tag 'usuario_password_confirmation', 'Confirmação de senha:' %>
+      <div class="controls">
+        <%= password_field_tag 'usuario[password_confirmation]', nil, required: true %>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <%= link_to 'Cancelar', '#', 'data-dismiss' => 'modal', class: 'btn' %>
+    <%= submit_tag 'Cadastrar', class: 'btn btn-primary' %>
+  </div>
+<% end %>

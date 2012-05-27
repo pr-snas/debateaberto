@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <button class="close" data-dismiss="modal">×</button>
+  <h1>Entrar</h1>
+</div>
+
+<%= form_tag usuario_session_path do %>
+  <div class="modal-body">
+    <p>
+      Não possui uma conta?
+      <%= link_to 'Cadastre-se', '#cadastrar', 'data-toggle' => 'modal', class: 'cadastrar' %>
+      ou entre utilizando sua conta do:
+    </p>
+
+    <ul class="provedores">
+      <li><%= link_to 'Facebook', '#', class: 'facebook', title: 'Facebook' %></li>
+      <li><%= link_to 'Twitter', '#', class: 'twitter', title: 'Twitter' %></li>
+      <li><%= link_to 'Google', '#', class: 'google', title: 'Google' %></li>
+      <li><%= link_to 'Yahoo', '#', class: 'yahoo', title: 'Yahoo' %></li>
+      <li><%= link_to 'OpenID', '#', class: 'openid', title: 'OpenID' %></li>
+    </ul>
+
+    <div class="control-group">
+      <%= label_tag 'usuario_email', 'E-mail:' %>
+      <div class="controls">
+        <%= email_field_tag 'usuario[email]', nil, required: true, autofocus: true,
+          pattern: '^[a-zA-Z0-9-\_.]+@[a-zA-Z0-9-\_.]+\.[a-zA-Z0-9.]{2,5}$' %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= label_tag 'usuario_password', 'Senha:' %>
+      <div class="controls">
+        <%= password_field_tag 'usuario[password]', nil, required: true %>
+      </div>
+    </div>
+
+    <%= label_tag 'usuario_remember_me', class: 'checkbox' do %>
+      <%= hidden_field_tag 'usuario[remember_me]', 0, id: nil %>
+      <%= check_box_tag 'usuario[remember_me]', 1 %>
+      Lembrar-me
+    <% end %>
+  </div>
+
+  <div class="modal-footer">
+    <%= link_to 'Esqueceu sua senha?', '#recuperar_senha', class: 'recuperar pull-left',
+      'data-toggle' => 'modal' %>
+    <%= link_to 'Cancelar', '#', 'data-dismiss' => 'modal', class: 'btn' %>
+    <%= submit_tag 'Entrar', class: 'btn btn-primary' %>
+  </div>
+<% end %>
