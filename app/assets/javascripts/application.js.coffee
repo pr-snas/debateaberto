@@ -7,3 +7,5 @@ jQuery ->
   $("a[rel=popover]").popover()
   $(".tooltip").tooltip()
   $("a[rel=tooltip]").tooltip()
+  $(".recuperar, .cadastrar").click ->
+    $(".modal").modal('hide')
