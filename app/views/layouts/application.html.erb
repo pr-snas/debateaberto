@@ -32,8 +32,31 @@
               <li><%= link_to 'Navegar', '#'  %></li>
               <li><%= link_to 'Criar um canal', '#'  %></li>
             </ul>
-            <ul class="nav pull-right">
-              <li><%= link_to 'Entrar / Cadastro', '#entrar', 'data-toggle' => 'modal' %></li>
+            <ul class="nav pull-right painel">
+              <% if usuario_signed_in? %>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    <%= current_usuario.email %>
+                    <b class="caret"></b>
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li>
+                      <%= link_to edit_usuario_registration_path do %>
+                        <i class="icon-cog"></i>
+                        Editar minha conta
+                      <% end %>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                      <%= link_to destroy_usuario_session_path, method: :delete do %>
+                        <i class="icon-off"></i> Sair
+                      <% end %>
+                    </li>
+                  </ul>
+                </li>
+              <% else %>
+                <li><%= link_to 'Entrar / Cadastro', '#entrar', 'data-toggle' => 'modal' %></li>
+              <% end %>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
