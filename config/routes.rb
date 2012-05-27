@@ -1,5 +1,5 @@
 Debateaberto::Application.routes.draw do
-  devise_for :usuarios#, skip: [:sessions, :passwords, :registrations]
+  devise_for :usuarios, skip: [:sessions, :passwords, :registrations]
   devise_scope :usuario do
     # login/logout
     get '/entrar' => 'devise/sessions#new', as: :new_usuario_session
