@@ -13,6 +13,7 @@ class CanaisController < ApplicationController
   # GET /canais/1
   # GET /canais/1.json
   def show
+    @canal = Canal.find_by_path!(request.subdomain)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @canal }

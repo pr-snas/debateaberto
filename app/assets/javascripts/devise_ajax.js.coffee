@@ -16,7 +16,7 @@ jQuery ->
         $this.find('.modal-body').flashMsg errorMsgs
 
   window.autenticaUsuario = (data) ->
-    data = JSON.parse data
+    data = JSON.parse data if typeof data == 'string'
     $('.modal').modal('hide')
     $('.painel').html JST['shared/usuario_dropdown'](data)
 
