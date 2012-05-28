@@ -2,7 +2,7 @@ class Usuario < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
@@ -23,6 +23,16 @@ class Usuario < ActiveRecord::Base
 
   def before_save
     self.perfil.nome = self.nome
+  end
+
+  def self.find_or_create_from_auth_hash(auth_hash)
+    if usuario = self.find_by_email(auth_hash.info.email)
+      usuario
+    else
+      usuario = self.create(email: auth_hash.info.email, password: Devise.friendly_token[0, 20]) 
+      usuario.perfil = Perfil.create(nome: auth_hash.info.name)
+      usuario
+    end
   end
 
   private
