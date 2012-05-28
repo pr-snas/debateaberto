@@ -2,22 +2,14 @@
 
 <table>
   <tr>
-    <th>Path</th>
     <th>Nome</th>
     <th>Descricao</th>
-    <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @canais.each do |canal| %>
   <tr>
-    <td><%= canal.path %></td>
-    <td><%= canal.nome %></td>
-    <td><%= canal.descricao %></td>
-    <td><%= link_to 'Show', canal %></td>
-    <td><%= link_to 'Edit', edit_canal_path(canal) %></td>
-    <td><%= link_to 'Destroy', canal, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to canal.nome, root_url(subdomain: canal.path) %></td>
+    <td><%= truncate canal.descricao %></td>
   </tr>
 <% end %>
 </table>
