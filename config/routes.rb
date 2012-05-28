@@ -5,6 +5,8 @@ Debateaberto::Application.routes.draw do
   put '/canais/:id', to: 'canais#update', as: :canal
   delete '/canais/:id', to: 'canais#destroy'
 
+  resources :mensagens
+
   constraints(Subdomain::Principal) do
     get '/canais', to: 'canais#index'
     get '/canais/novo', to: 'canais#new', as: :new_canal
