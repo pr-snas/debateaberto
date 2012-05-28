@@ -12,7 +12,7 @@
     </p>
 
     <ul class="provedores">
-      <li><%= link_to 'Facebook', usuario_omniauth_authorize_path(:facebook),
+      <li><%= link_to 'Facebook', usuario_omniauth_authorize_url(:facebook, subdomain: false),
         class: 'facebook', title: 'Facebook', 'data-width' => 600,
         'data-height' => 400 %></li>
     </ul>
