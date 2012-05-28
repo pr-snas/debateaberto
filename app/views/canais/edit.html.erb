@@ -2,5 +2,4 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @canal %> |
-<%= link_to 'Back', canais_path %>
+<%= link_to 'Back', root_url(subdomain: @canal.path) %>
