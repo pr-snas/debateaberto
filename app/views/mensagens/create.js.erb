@@ -1,2 +1,5 @@
-$("#chat").append("<%= j render(@mensagem) %>");
+<% publish_to "/mensagens/new" do %>
+  $("#chat").append("<%= j render(@mensagem) %>");
+  $("#chat").scrollTop($("#chat").height());
+<% end %>
 $("#mensagem_content").val('');

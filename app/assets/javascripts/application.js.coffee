@@ -5,6 +5,7 @@
 #= require handlebars.runtime
 #= require video
 #= require_tree ../templates
+#= require private_pub
 #= require_tree .
 
 _V_.options.flash.swf = "/assets/video-js.swf"
