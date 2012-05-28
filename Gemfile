@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.3'
 gem 'sqlite3', group: :development
 gem 'devise'
+gem 'omniauth-facebook'
 gem 'cancan'
 gem 'rspec-rails', group: [:development, :test]
 
