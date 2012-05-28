@@ -12,6 +12,7 @@ class Usuario < ActiveRecord::Base
   attr_accessor :nome
 
   has_one :perfil
+  has_many :canais
 
   validates :papel, inclusion: { in: %w(super-administrador administrador moderador usuario) }
 
