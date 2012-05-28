@@ -12,11 +12,9 @@
     </p>
 
     <ul class="provedores">
-      <li><%= link_to 'Facebook', '#', class: 'facebook', title: 'Facebook' %></li>
-      <li><%= link_to 'Twitter', '#', class: 'twitter', title: 'Twitter' %></li>
-      <li><%= link_to 'Google', '#', class: 'google', title: 'Google' %></li>
-      <li><%= link_to 'Yahoo', '#', class: 'yahoo', title: 'Yahoo' %></li>
-      <li><%= link_to 'OpenID', '#', class: 'openid', title: 'OpenID' %></li>
+      <li><%= link_to 'Facebook', usuario_omniauth_authorize_path(:facebook),
+        class: 'facebook', title: 'Facebook', 'data-width' => 600,
+        'data-height' => 400 %></li>
     </ul>
 
     <div class="control-group">
