@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528141348) do
+ActiveRecord::Schema.define(:version => 20120528190132) do
 
   create_table "canais", :force => true do |t|
     t.string   "path"
@@ -34,6 +34,15 @@ ActiveRecord::Schema.define(:version => 20120528141348) do
   end
 
   add_index "perfils", ["usuario_id"], :name => "index_perfils_on_usuario_id"
+
+  create_table "streammings", :force => true do |t|
+    t.string   "uri"
+    t.integer  "canal_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "streammings", ["canal_id"], :name => "index_streammings_on_canal_id"
 
   create_table "usuarios", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
