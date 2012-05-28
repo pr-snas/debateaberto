@@ -4,7 +4,7 @@ class Ability
   def initialize(user)
     usuario ||= Usuario.new
 
-    if usuario.papel == 'super-administrador'
+    if usuario.papel == 'administrador'
       can :manage, :all
     else
       can :read, :all

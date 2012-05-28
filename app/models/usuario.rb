@@ -14,7 +14,7 @@ class Usuario < ActiveRecord::Base
   has_one :perfil
   has_many :canais
 
-  validates :papel, inclusion: { in: %w(super-administrador administrador moderador usuario) }
+  validates :papel, inclusion: { in: %w(administrador administrador moderador usuario) }
 
   before_validation :define_papel_padrao
 
