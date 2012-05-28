@@ -1,5 +1,5 @@
 <div class="span7">
-  <h1><%= @canal.nome %></h1>
+  <h2><%= @canal.nome %></h2>
 
   <video id="streaming" class="video-js vjs-default-skin" controls
     autoplay width="540" height="335" data-setup="{}">
@@ -7,44 +7,43 @@
   </video>
 
   <div class="info">
-    <div class="usuarios-online"><i class="icon-user"></i> <span>1</span></div>
-    <div class="visualizacoes"><i class="icon-eye-open"></i> <span>1</span></div>
-    <!-- AddThis Button BEGIN -->
-    <div class="addthis_toolbox addthis_default_style ">
-      <a class="addthis_button_preferred_1"></a>
-      <a class="addthis_button_preferred_2"></a>
-      <a class="addthis_button_preferred_3"></a>
-      <a class="addthis_button_preferred_4"></a>
-      <a class="addthis_button_compact"></a>
-      <a class="addthis_counter addthis_bubble_style"></a>
+    <div class="meta">
+      <div class="usuarios-online"><i class="icon-user"></i> <span>1</span></div>
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style ">
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_preferred_3"></a>
+      </div>
+      <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+      <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fc3d12a73816701"></script>
+      <!-- AddThis Button END -->
+      <div class="visualizacoes"><i class="icon-eye-open"></i> <span>1</span></div>
     </div>
-    <script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
-    <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid=ra-4fc3d12a73816701"></script>
-    <!-- AddThis Button END -->
+  </div>
 
+  <% if @canal.descricao.present? %>
     <div class="desc">
       <%= @canal.descricao %>
     </div>
-  </div>
+  <% end %>
 </div>
 
 <div class="span5">
   <%= form_for(Mensagem.new, remote: true) do |f| %>
     <div class="msgs">
-      <% if @canal.mensagens.any? %>
-        <ul id="chat">
+      <ul id="chat">
+        <% if @canal.mensagens.any? %>
           <%= render @mensagens %>
-        </ul>
-      <% else %>
-        <p>Nenhuma mensagem enviada.</p>
-      <% end %>
+        <% else %>
+          <li>Nenhuma mensagem enviada.</li>
+        <% end %>
+      </ul>
     </div>
 
     <div class="actions">
       <%= f.text_field :content, placeholder: @placeholder, maxlength: 255 %>
       <%= f.submit 'Enviar', class: 'btn btn-primary' %>
-      <%= link_to 'Usuários', '#' %>
-      <%= link_to 'Configurações', '#' %>
     </div>
   <% end %>
 </div>

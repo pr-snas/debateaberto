@@ -1,3 +1,65 @@
-// Place all the styles related to the Canais controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h2 {
+  margin-bottom: 10px;
+}
+
+div.info {
+  border: 1px solid #e5e5e5;
+  padding: 7px 10px;
+  margin-top: 10px;
+  border-radius: 8px;
+
+  div.meta {
+    overflow: hidden;
+  }
+
+  div.usuarios-online {
+    float: left;
+  }
+
+  div.visualizacoes {
+    float: right;
+    margin-right: 10px;
+  }
+
+  div.addthis_toolbox {
+    float: right;
+    width: 60px;
+  }
+}
+
+div.desc {
+  margin-top: 25px;
+}
+
+#new_mensagem {
+  #chat {
+    height: 379px;
+    margin: 0 0 15px 0;
+    overflow: auto;
+
+    li {
+      list-style: none;
+      display: block;
+      margin-bottom: 5px;
+      padding-right: 40px;
+      position: relative;
+
+      span.created_at {
+        color: #666;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  #mensagem_content {
+    float: left;
+    margin-right: 5px;
+    width: 307px;
+  }
+
+  input.btn-primary {
+    float: left;
+  }
+}
