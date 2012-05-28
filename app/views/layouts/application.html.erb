@@ -25,13 +25,6 @@
           </a>
           <a class="brand" href="<%= root_url %>">Debate Aberto</a>
           <div class="container nav-collapse">
-            <form class="navbar-search pull-left" action="#">
-              <input type="text" class="search-query" placeholder="Pesquisar...">
-            </form>
-            <ul class="nav pull-left">
-              <li><%= link_to 'Navegar', canais_url(subdomain: false)  %></li>
-              <li><%= link_to 'Criar um canal', new_canal_url(subdomain: false)  %></li>
-            </ul>
             <ul class="nav pull-right painel">
               <% if usuario_signed_in? %>
                 <li class="dropdown">
