@@ -13,6 +13,7 @@ class Usuario < ActiveRecord::Base
 
   has_one :perfil
   has_many :canais
+  has_many :mensagens
 
   validates :papel, inclusion: { in: %w(administrador administrador moderador usuario) }
 

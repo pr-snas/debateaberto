@@ -16,4 +16,5 @@
 
 ActiveSupport::Inflector.inflections do |inflect|
   inflect.irregular 'canal', 'canais'
+  inflect.irregular 'mensagem', 'mensagens'
 end
