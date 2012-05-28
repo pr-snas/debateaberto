@@ -1,0 +1,27 @@
+<h1>Listing canais</h1>
+
+<table>
+  <tr>
+    <th>Path</th>
+    <th>Nome</th>
+    <th>Descricao</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @canais.each do |canal| %>
+  <tr>
+    <td><%= canal.path %></td>
+    <td><%= canal.nome %></td>
+    <td><%= canal.descricao %></td>
+    <td><%= link_to 'Show', canal %></td>
+    <td><%= link_to 'Edit', edit_canal_path(canal) %></td>
+    <td><%= link_to 'Destroy', canal, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Canal', new_canal_path %>

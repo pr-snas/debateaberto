@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525205829) do
+ActiveRecord::Schema.define(:version => 20120528140201) do
+
+  create_table "canais", :force => true do |t|
+    t.string   "path"
+    t.string   "nome"
+    t.text     "descricao"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "perfils", :force => true do |t|
     t.integer  "usuario_id"

@@ -1,0 +1,2 @@
+module CanaisHelper
+end
