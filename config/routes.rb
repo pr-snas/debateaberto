@@ -1,5 +1,6 @@
 Debateaberto::Application.routes.draw do
-  devise_for :usuarios, skip: [:sessions, :passwords, :registrations]
+  devise_for :usuarios, skip: [:sessions, :passwords, :registrations],
+    controllers: { omniauth_callbacks: 'usuarios/omniauth_callbacks' }
   devise_scope :usuario do
     # login/logout
     post '/entrar' => 'devise/sessions#create', as: :usuario_session
