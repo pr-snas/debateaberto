@@ -32,9 +32,11 @@ class CanaisController < ApplicationController
   # POST /canais
   # POST /canais.json
   def create
+    @canal.usuario = current_usuario
     respond_to do |format|
       if @canal.save
-        format.html { redirect_to @canal, notice: 'Canal was successfully created.' }
+        format.html { redirect_to root_url(subdomain: @canal.path),
+          notice: 'Canal was successfully created.' }
         format.json { render json: @canal, status: :created, location: @canal }
       else
         format.html { render action: "new" }
@@ -43,12 +45,18 @@ class CanaisController < ApplicationController
     end
   end
 
+  def edit
+    @canal = Canal.find_by_path!(request.subdomain)
+    authorize! :update, @canal
+  end
+
   # PUT /canais/1
   # PUT /canais/1.json
   def update
     respond_to do |format|
       if @canal.update_attributes(params[:canal])
-        format.html { redirect_to @canal, notice: 'Canal was successfully updated.' }
+        format.html { redirect_to root_url(subdomain: @canal.path),
+          notice: 'Canal was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
