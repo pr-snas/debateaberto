@@ -14,6 +14,8 @@ class CanaisController < ApplicationController
   # GET /canais/1.json
   def show
     @canal = Canal.find_by_path!(request.subdomain)
+    @mensagens = @canal.mensagens.all
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @canal }
@@ -33,6 +35,8 @@ class CanaisController < ApplicationController
   # POST /canais.json
   def create
     @canal.usuario = current_usuario
+    @canal.streamming = Streamming.create params[:streamming]
+
     respond_to do |format|
       if @canal.save
         format.html { redirect_to root_url(subdomain: @canal.path),
