@@ -1,7 +1,7 @@
 <li>
   <span class="created_at"><%= mensagem.created_at.strftime("%H:%M") %></span>
   <strong><%= mensagem.usuario.perfil.nome %></strong>: <%= mensagem.content %>
-  <% if current_usuario.papel == 'administrador' %>
+  <% if current_usuario.try(:papel) == 'administrador' %>
     <%= link_to mensagem, method: :delete, confirm: 'Tem certeza?' do %>
       <i class="icon-trash"></i>
     <% end %>
