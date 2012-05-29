@@ -7,18 +7,20 @@ div.info {
   padding: 7px 10px;
   margin-top: 10px;
   border-radius: 8px;
+  min-height: 19px;
 
   div.meta {
     overflow: hidden;
   }
 
   div.usuarios-online {
+    color: #9d261d;
     float: left;
   }
 
   div.visualizacoes {
-    float: right;
-    margin-right: 10px;
+    float: left;
+    margin-left: 15px;
   }
 
   div.addthis_toolbox {
@@ -32,8 +34,10 @@ div.desc {
 }
 
 #new_mensagem {
+  margin-top: 46px;
+
   #chat {
-    height: 379px;
+    height: 333px;
     margin: 0 0 15px 0;
     overflow: auto;
 
