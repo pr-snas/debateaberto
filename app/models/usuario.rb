@@ -19,12 +19,13 @@ class Usuario < ActiveRecord::Base
 
   before_validation :define_papel_padrao
 
-  def after_initialize
-    self.perfil ||= build_perfil
-  end
+  after_save :cria_perfil_e_salva_nome
 
-  def before_save
+  def cria_perfil_e_salva_nome
+    self.perfil ||= Perfil.new
     self.perfil.nome = self.nome
+    self.perfil.save
+    true
   end
 
   def self.find_or_create_from_auth_hash(auth_hash)
