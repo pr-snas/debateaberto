@@ -1,5 +1,6 @@
 <% publish_to "/mensagens/new" do %>
-  $("#chat").append("<%= j render(@mensagem) %>");
-  $("#chat").scrollTop($("#chat").height());
+  $elem = $("#chat");
+  $elem.append("<%= j render(@mensagem) %>");
+  $elem.scrollTop($elem[0].scrollHeight);
 <% end %>
 $("#mensagem_content").val('');
