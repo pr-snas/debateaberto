@@ -33,7 +33,7 @@ class Usuario < ActiveRecord::Base
       usuario
     else
       usuario = self.create(email: auth_hash.info.email, password: Devise.friendly_token[0, 20]) 
-      usuario.perfil = Perfil.create(nome: auth_hash.info.name)
+      usuario.nome = auth_hash.info.name
       usuario
     end
   end
