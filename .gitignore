@@ -15,6 +15,6 @@
 /tmp
 
 /config/database.yml
-/config/facebook.yml
+/config/config.yml
 
 /app/assets/images/icones-*.png
