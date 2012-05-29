@@ -4,7 +4,11 @@ require "yaml"
 require "faye"
 require "private_pub"
 
+RAILS_ENV ||= 'development'
+CONFIG = (YAML.load_file('config/config.yml')[RAILS_ENV] rescue {}).merge(ENV)
+PrivatePub.config[:server] = CONFIG['faye_server']
+PrivatePub.config[:secret_token] = CONFIG['faye_secret_token']
+PrivatePub.config[:signature_expiration] = CONFIG['faye_signature_expiration']
+puts PrivatePub.config
 Faye::WebSocket.load_adapter('thin')
-
-PrivatePub.load_config(File.expand_path("../config/private_pub.yml", __FILE__), ENV["RAILS_ENV"] || "development")
 run PrivatePub.faye_app

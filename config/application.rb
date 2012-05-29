@@ -1,6 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'yaml'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
@@ -55,6 +56,10 @@ module Debateaberto
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # support yaml and heroku config vars, preferring ENV for heroku
+    RAILS_ENV ||= 'development'
+    CONFIG = (YAML.load_file("#{Rails.root}/config/config.yml")[RAILS_ENV] rescue {}).merge(ENV)
 
     # Para o deploy no Heroku funcionar
     config.assets.initialize_on_precompile = false

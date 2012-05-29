@@ -1,29 +1,29 @@
 development:
   session_key: examplo_desenvolvimento
   session_secret: exemplo_desenvolvimento
-  domain: http://debateaberto.dev
+  host: debateaberto.dev
   facebook_app_id: exemplo_app_id
   facebook_app_secret: exemplo_app_secret
-  server: http://debateaberto.dev/faye
-  secret_token: exemplo
-  signature_expiration: 3600 # uma hora
+  faye_server: "http://debateaberto.dev:9292/faye"
+  faye_secret_token: exemplo
+  faye_signature_expiration: 3600 # uma hora
 
 test:
   session_key: examplo_teste
   session_secret: exemplo_teste
-  domain: http://debateaberto.dev
+  host: debateaberto.dev
   facebook_app_id: exemplo_app_id
   facebook_app_secret: exemplo_app_secret
-  server: http://debateaberto.dev/faye
-  secret_token: exemplo
-  signature_expiration: 3600 # uma hora
+  faye_server: "http://debateaberto.dev:9292/faye"
+  faye_secret_token: exemplo
+  faye_signature_expiration: 3600 # uma hora
 
 production:
   session_key: examplo_producao
   session_secret: exemplo_producao
-  domain: http://debateaberto.org
+  host: debateaberto.org
   facebook_app_id: exemplo_app_id
   facebook_app_secret: exemplo_app_secret
-  server: http://debateaberto.org/faye
-  secret_token: exemplo
-  signature_expiration: 3600 # uma hora
+  faye_server: "http://debateaberto.org/faye"
+  faye_secret_token: exemplo
+  faye_signature_expiration: 3600 # uma hora
