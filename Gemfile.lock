@@ -226,6 +226,7 @@ DEPENDENCIES
   guard-rspec
   handlebars_assets
   jquery-rails
+  nokogiri
   omniauth-facebook
   pg
   private_pub

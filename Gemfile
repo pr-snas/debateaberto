@@ -7,6 +7,7 @@ gem 'omniauth-facebook'
 gem 'cancan'
 gem 'rspec-rails', group: [:development, :test]
 gem 'private_pub'
+gem 'nokogiri'
 
 group :test do
   gem 'factory_girl_rails'
