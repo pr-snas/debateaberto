@@ -34,7 +34,9 @@ div.desc {
 }
 
 #new_mensagem {
+  margin-bottom: 25px;
   margin-top: 46px;
+  overflow: hidden;
 
   #chat {
     height: 333px;
@@ -66,4 +68,8 @@ div.desc {
   input.btn-primary {
     float: left;
   }
+}
+
+.programacao {
+  margin-top: 20px;
 }

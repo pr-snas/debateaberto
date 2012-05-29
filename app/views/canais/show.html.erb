@@ -27,6 +27,47 @@
       <%= @canal.descricao %>
     </div>
   <% end %>
+
+  <div class="programacao">
+    <h4>29 de maio (8h30):</h4>
+    <ul>
+      <li>
+        <h5>Coordenação:</h5>
+        Deputada Federal Dalva Figueiredo
+      </li>
+      <li>
+        <h5>Palestrantes:</h5>
+        <ul>
+          <li>Sérgio Lopes - Secretário Extraordinário de Regularização 
+          Fundiária na Amazônia Legal</li>
+          <li>Raimunda Monteiro - Professora da Universidade Federal 
+          do Oeste Paraense</li>
+          <li>Joenia Wapixana - Líder indígena</li>
+          <li>Vanessa Grazziotin - Senadora</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h4>29 de maio (15h00) - Presença do estado na amazônia</h4>
+    <ul>
+      <li>
+        <h5>Coordenação:</h5>
+        Maria Augusta Assirati - Secretaria-Geral
+      </li>
+      <li>
+        <h5>Palestrantes:</h5>
+        <ul>
+          <li>Maurício Muniz - Secretário do Programa de Aceleração 
+          do Crescimento - MPOG</li>
+          <li>Marilene Correia - Professora da Universidade Federal do 
+          Amazonas</li>
+          <li>Atanagildo Matos - Conselho Nacional das Populações
+          Extrativistas</li>
+          <li>Jorge Viana - Senador</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 </div>
 
 <div class="span5">
@@ -46,4 +87,35 @@
       <%= f.submit 'Enviar', class: 'btn btn-primary' %>
     </div>
   <% end %>
+
+  <script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
+  <script>
+    new TWTR.Widget({
+      version: 2,
+      type: 'search',
+      search: '#rio20',
+      interval: 30000,
+      title: 'Rio + 20',
+      subject: 'Amazônia em Pauta',
+      width: 'auto',
+      height: 300,
+      theme: {
+        shell: {
+          background: '#8ec1da',
+          color: '#ffffff'
+        },
+        tweets: {
+          background: '#ffffff',
+          color: '#444444',
+          links: '#1985b5'
+        }
+      },
+      features: {
+        scrollbar: false,
+        loop: true,
+        live: true,
+        behavior: 'default'
+      }
+    }).render().start();
+  </script>
 </div>
