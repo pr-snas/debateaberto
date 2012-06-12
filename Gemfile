@@ -6,6 +6,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem 'cancan'
 gem 'rspec-rails', group: [:development, :test]
+gem 'faye'
 gem 'private_pub'
 gem 'nokogiri'
 gem 'heroku'

@@ -233,6 +233,7 @@ DEPENDENCIES
   compass_twitter_bootstrap
   devise
   factory_girl_rails
+  faye
   guard-rspec
   handlebars_assets
   heroku
