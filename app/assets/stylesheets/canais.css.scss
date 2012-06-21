@@ -44,6 +44,7 @@ div.desc {
     overflow: auto;
 
     li {
+      color: #666;
       list-style: none;
       display: block;
       margin-bottom: 5px;
@@ -55,6 +56,40 @@ div.desc {
         position: absolute;
         right: 0;
         top: 0;
+      }
+    }
+
+    li.hoje, li:hover {
+      color: #333;
+    }
+
+    li.separador-dia {
+      margin: 10px 0;
+      padding-right: 0;
+      text-align: center;
+
+      span.hr {
+        border-top: 1px dotted #ccc;
+        display: block;
+        height: 1px;
+        position: relative;
+        top: 12px;
+        z-index: 1;
+        width: 100%;
+      }
+
+      strong {
+        background: #fff;
+        font-size: 11px;
+        font-weight: normal;
+        padding: 0 30px;
+        position: relative;
+        z-index: 2;
+
+        i {
+          font-size: 10px;
+          opacity: 0.7;
+        }
       }
     }
   }

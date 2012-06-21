@@ -1,4 +1,10 @@
-<li>
+<% if mensagem.primeira_do_dia? %>
+  <li class="separador-dia <%= "hoje" if mensagem.created_at.day == Time.now.day %>">
+    <span class="hr"></span>
+    <strong><i class="icon-arrow-down"></i> <%= mensagem.created_at.strftime("%d/%m/%Y") %> <i class="icon-arrow-down"></i></strong>
+  </li>
+<% end %>
+<li class="<%= "hoje" if mensagem.created_at.day == Time.now.day %>">
   <span class="created_at"><%= mensagem.created_at.strftime("%H:%M") %></span>
   <strong><%= mensagem.usuario.perfil.nome %></strong>: <%= mensagem.content %>
   <% if current_usuario.try(:papel) == 'administrador' %>
