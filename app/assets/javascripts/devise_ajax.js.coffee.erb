@@ -40,7 +40,7 @@ jQuery ->
 
 window.fbAsyncInit = ->
   FB.init
-    appId: '<%= CONFIG["facebook_app_id"] %>'
+    appId: window.fbAppId
     cookie: true
 
   $('#entrar form .provedores a').click (e) ->

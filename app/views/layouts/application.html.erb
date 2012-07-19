@@ -78,6 +78,9 @@
     <!-- Javascripts
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    <%= javascript_tag do %>
+      window.fbAppId = '<%= CONFIG['facebook_app_id'] %>';
+    <% end %>
     <%= javascript_include_tag 'application' %>
     <%= yield :script %>
 
