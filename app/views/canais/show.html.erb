@@ -82,4 +82,4 @@
   </script>
 </div>
 
-<%= subscribe_to "/#{@canal.id}/mensagens/new" %>
+<% content_for :script { subscribe_to "/#{@canal.id}/mensagens/new" } %>
