@@ -1,4 +1,11 @@
 jQuery ->
+  $('body').prepend('<div id="fb-root"></div>')
+
+  $.ajax
+    url: "#{window.location.protocol}//connect.facebook.net/en_US/all.js"
+    dataType: 'script'
+    cache: true
+
   enviaFormulario = (callback) ->
     $this = $(this)
     $.ajax
@@ -25,17 +32,27 @@ jQuery ->
       window.autenticaUsuario response
     return false
 
-  $('#entrar form .provedores a').click ->
-    width = $(this).data('width')
-    height = $(this).data('height')
-    left = (screen.width / 2) - (width / 2)
-    top = (screen.height / 2) - (height / 2)
-    window.open($(this).attr('href'), $(this).attr('title'),
-      "menubar=no,toolbar=no,status=no,width=#{width},height=#{height},left=#{left},top=#{top}")
-    return false
-
   $('#recuperar_senha form').submit ->
     enviaFormulario.call this, (response) ->
       $('.modal').modal('hide')
       $('#recuperar_senha_ok').modal('show')
     return false
+
+window.fbAsyncInit = ->
+  FB.init
+    appId: '<%= CONFIG["facebook_app_id"] %>'
+    cookie: true
+
+  $('#entrar form .provedores a').click (e) ->
+    e.preventDefault()
+    FB.getLoginStatus (response) ->
+      if response.authResponse
+        $.getJSON('/usuarios/auth/facebook/callback', (usuario) ->
+          window.autenticaUsuario usuario
+        )
+      else
+        FB.login (response) ->
+          if response.authResponse
+            $.getJSON('/usuarios/auth/facebook/callback', (usuario) ->
+              window.autenticaUsuario usuario
+            )

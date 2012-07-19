@@ -2,6 +2,7 @@
 <html>
 <body>
   <script>
+    console.log(opener)
     if (window.opener) {
       window.opener.autenticaUsuario('<%= raw @usuario.to_json(only: :email) %>')
       window.close()
