@@ -7,5 +7,6 @@ class Canal < ActiveRecord::Base
 
   belongs_to :usuario
   has_one :streamming
+  has_one :twitter
   has_many :mensagens
 end

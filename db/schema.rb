@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528205854) do
+ActiveRecord::Schema.define(:version => 20120719065300) do
 
   create_table "canais", :force => true do |t|
     t.string   "path"
@@ -20,6 +20,11 @@ ActiveRecord::Schema.define(:version => 20120528205854) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "usuario_id"
+  end
+
+  create_table "chats", :force => true do |t|
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "mensagens", :force => true do |t|
@@ -51,6 +56,18 @@ ActiveRecord::Schema.define(:version => 20120528205854) do
   end
 
   add_index "streammings", ["canal_id"], :name => "index_streammings_on_canal_id"
+
+  create_table "twitters", :force => true do |t|
+    t.string   "titulo"
+    t.string   "busca"
+    t.string   "altura"
+    t.integer  "canal_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.string   "descricao"
+  end
+
+  add_index "twitters", ["canal_id"], :name => "index_twitters_on_canal_id"
 
   create_table "usuarios", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
