@@ -3,9 +3,9 @@
 
   <video id="streaming" class="video-js vjs-default-skin" controls
     autoplay width="540" height="335" data-setup="{}">
-    <source src="http://giss.tv:8000/nosdigitais.ogg" type='video/ogg; codecs="theora, vorbis"'>
+    <source src="<%= @canal.streamming.uri %>" type='video/ogg; codecs="theora, vorbis"'>
     <applet code="com.fluendo.player.Cortado.class" archive="http://theora.org/cortado.jar" width="352" height="288">
-      <param name="url" value="http://giss.tv:8000/nosdigitais.ogg"/> 
+      <param name="url" value="<%= @canal.streamming.uri %>"/> 
     </applet>
   </video>
 
@@ -30,134 +30,6 @@
       <%= @canal.descricao %>
     </div>
   <% end %>
-
-  <div class="programacao">
-    <h3>Programação</h3>
-    <br>
-    <h4>15 de junho (16h00) - RODA DE CONVERSA - Processos educativos, comunicação e meio ambiente</h4>
-    <ul>
-      <li>Exposição de conceitos, ações e projetos estratégicos de comunicação e educação ambiental</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>Eduardo Strucchi (Vídeo Ambiental)</li>
-          <li>Pedro Jatobá (Rede Colaborativa iTEIA)</li>
-          <li>Fabiana Ganem (Departamento de Educação Ambiental/Ministério do Meio Ambiente)</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>16 de junho (16h00) - Lixo eletrônico: impactos e transformações</h4>
-    <ul>
-      <li>As questões relativas à gestão integrada e gerenciamento do lixo eletrônico; as responsabilidades de empresas e do poder público; a legislação; os movimentos, projetos e programas que desenvolvem ações para minimizar os impactos causados por esses resíduos ao ambiente.</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>Eloir José Coordenador do Centro Social Marista Felipe Andueza - Consultor Ambiental especializado em resíduos eletrônicos</li>
-          <li>Andréa Caresteada - Técnica especialista do Departamento de Educação Ambiental, do Ministério do Meio Ambiente.</li>
-          <li>Rodolfo Avelino – Coletivo Digital</li>
-          <li>Dênis Rodrigues (moderador) - Coordenador de Formação Secretaria de Inclusão Digital/ Ministério das Comunicações</li>
-          <li>Felipe Fonseca - Labjor (UNICAMP), Rede Metareciclagem e Blog Lixo Eletrônico</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>17 de junho (16h00) - Apropriação tecnológica na perspectiva dos povos e comunidades tradicionais</h4>
-    <ul>
-      <li>Experiências e relatos de comunidades tradicionais que atuam com comunicação e inclusão digital para uma articulação em rede, compartilhando suas trajetórias e ações para um desenvolvimento local e sustentável.</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>Antonio Carlos (TC) - Representante da Rede Mocambos http://www.mocambos.org/</li>
-          <li>Mãe Beth de Oxum – Liderança tradicional de matriz africana</li>
-          <li>Anapuaka Tupinambá - Rede de Cultura Digital Indígena</li>
-          <li>Jair Kuikuro - Projeto Hiper Mulheres</li>
-          <li>Maria do Socorro Guterres (moderadora) - Gerente de Projetos Secretaria de Comunidades Tradicionais</li>
-          <li>Secretaria de Políticas de Promoção de Igualdade Racial - SEPPIR</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>18 de junho (16h00) - RODA DE CONVERSA - O projeto Territórios Digitais contado pelos assentados</h4>
-    <ul>
-      <li>Uma experiência de sucesso da juventude no meio rural através de histórias de protagonismo na Casa Digital de Santana-CE. A Casa é um dos telecentros que integra o Programa Territórios da Cidadania do Ministério do Desenvolvimento Agrário- MDA em parceria com o Ministério das Comunicações.</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>José Filho - Representante do Assentamento de Santana – CE</li>
-          <li>Geilsa Roberto da Paixão - Comunidade Quilombola Mituasú - PB</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>19 de junho (16h00) - RODA DE CONVERSA  - Juventude Rural - Inclusão Digital e Sustentabilidade</h4>
-    <ul>
-      <li>A construção de políticas públicas que garantam às populações rurais formas de acesso às tecnologias de informação e comunicação (TICs), fomentando desenvolvimento sustentável e promovendo a permanência da juventude no campo.</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>Severine Macedo - Secretaria Nacional de Juventude</li>
-          <li>Ana Carolina Silva - Assessora de Juventude do Gabinete do Ministério do Desenvolvimento Agrário</li>
-          <li>Aroldo Magno de Oliveira - Projeto do Edital Juventude Rural (UFF)</li>
-          <li>Raul de Souza Amorim - Coordenador de Juventude do Movimento Sem Terra</li>
-          <li>Cristiano Passos (moderador) – Assessor da Secretaria de Inclusão Digital do Ministério das Comunicações</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>20 de junho (16h00) - RODA DE CONVERSA - Cidades Digitais</h4>
-    <ul>
-      <li>O desafio político-institucional da implementação e manutenção das Cidades Digitais. Os impactos e transformações sociais e econômicas ligadas à infraestrutura tecnológica da cidade, à disponibilidade de serviços eletrônicos, à gestão pública na Era da Informação.</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>Lygia Pupatto - Secretária de Inclusão Digital do Ministério das Comunicações</li>
-          <li>Delfino Natal de Souza - Secretario de Logística e Tecnologia da Informação do Ministério do Planejamento</li>
-          <li>Franklin Coelho - Secretário de Ciência e Tecnologia do Rio de Janeiro</li>
-          <li>Rodrigo Firmino - Programa de Pós-Graduação em Gestão Urbana/PUC-PR</li>
-          <li>Américo Bernardes (moderador) - Diretor de Infraestrutura da Secretaria de Inclusão Digital do Ministério das Comunicações</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>21 de junho (11h00) - RODA DE CONVERSA  - Povos e Comunidades Tradicionais - Identidade e Território</h4>
-    <ul>
-      <li>O território como elemento constitutivo das comunidades tradicionais. Diálogos para a sustentabilidade.</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>Aderbal Moreira Costa</li>
-          <li>Aniceto Catanhede Filho</li>
-          <li>Jayro Pereira de Jesus</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>21 de junho (16h00) - RODA DE CONVERSA - Inclusão Digital, Social e Ambiental</h4>
-    <ul>
-      <li>A indissociabilidade entre as metas de Inclusão Digital, a transformação social, o crescimento sustentável e o cuidado com o planeta.</li>
-      <li>
-        <h5>Convidados:</h5>
-        <ul>
-          <li>Cesar Alvarez - Secretário Executivo do Ministério das Comunicações</li>
-          <li>Jader Gama - Coletivo Puraqué</li>
-          <li>Daniel Tygel - Membro da EITA - Educação, Informação e Tecnologia para Autogestão. Ex-secretário executivo do Fórum Brasileiro de Economia Solidária. Representante da rede Cirandas.net</li>
-          <li>Adriano Belisário - Coordenador do Laboratório de Comunicação Compartilhada da Cúpula dos Povos</li>
-          <li>Kiki Mori (moderadora) - Diretora de Articulação e Formação da Secretaria de Inclusão Digital do Ministério das Comunicações</li>
-        </ul>
-      </li>
-    </ul>
-    <br>
-    <h4>22 de junho (11h00) - EVENTO - Lançamento de livro e roda de conversa ´Ancestralidade africana no Brasil´</h4>
-    <ul>
-      <li>“Contos e Crônicas do Mestre Tolomi: África Viva no Brasil" - após o lançamento haverá uma roda de conversa com o autor, Pai Paulo.</li>
-    </ul>
-    <br>
-    <h4>22 de junho (16h00) - EVENTO -  Oralidade e Web (as tradições conectadas via internet)</h4>
-    <ul>
-      <li>Como a internet tem e pode contribuir para o fortalecimento das tradições orais. Com Mãe Beata de Iemanjá, Makota Valdina e Pai Paulo.</li>
-    </ul>
-  </div>
 </div>
 
 <div class="span5">
@@ -183,12 +55,12 @@
     new TWTR.Widget({
       version: 2,
       type: 'search',
-      search: '#rio20 OR #riomais20',
+      search: '<%= @canal.twitter.busca %>',
       interval: 30000,
-      title: 'Rio + 20',
-      subject: 'Programação MC em Inclusão Digital',
+      title: '<%= @canal.twitter.titulo %>',
+      subject: '<%= @canal.twitter.descricao %>',
       width: 'auto',
-      height: 710,
+      height: <%= @canal.twitter.altura %>,
       theme: {
         shell: {
           background: '#8ec1da',
@@ -209,3 +81,5 @@
     }).render().start();
   </script>
 </div>
+
+<%= subscribe_to "/#{@canal.id}/mensagens/new" %>

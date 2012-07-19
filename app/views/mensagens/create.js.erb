@@ -1,4 +1,4 @@
-<% publish_to "/mensagens/new" do %>
+<% publish_to "/#{@canal.id}/mensagens/new" do %>
   $elem = $("#chat");
   $elem.append("<%= j render(@mensagem) %>");
   $elem.scrollTop($elem[0].scrollHeight);
