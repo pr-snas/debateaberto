@@ -22,11 +22,6 @@ ActiveRecord::Schema.define(:version => 20120719065300) do
     t.integer  "usuario_id"
   end
 
-  create_table "chats", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "mensagens", :force => true do |t|
     t.text     "content"
     t.integer  "usuario_id"
