@@ -31,8 +31,8 @@ Para ver ele funcionando, acesse [DebateAberto.org] (http://debateaberto.org)
   `rails server`
 9. Visite <http://localhost:3000>
 
-# Licensa
-Este projeto utiliza a licensa GNU Affero General Public License. Veja o arquivo COPYING para maiores informações.
+# Licença
+Este projeto utiliza a licença GNU Affero General Public License. Veja o arquivo COPYING para maiores informações.
 
 # Contribuir
 Sinta-se livre para contribuir enviando pull-requests, melhorando a documentação ou relatando bugs.
