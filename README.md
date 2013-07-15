@@ -7,7 +7,7 @@ Aviso aos navegantes: O projeto DebateAberto.org ainda não integra um servidor 
 
 Para ver ele funcionando, acesse [DebateAberto.org] (http://debateaberto.org)
 
-# Depêndencias
+# Dependências
 1. [Ruby 1.9.x](http://ruby-lang.org)
 2. [RubyGems](http://rubygems.org/pages/download) *caso não tenha sido instalado junto com o ruby*
 3. [Bundler](http://gembundler.com/)
@@ -15,8 +15,8 @@ Para ver ele funcionando, acesse [DebateAberto.org] (http://debateaberto.org)
 
 # Como utilizar
 1. Clone o repostório git:
-  `git clone https://marcosmlopes@github.com/marcosmlopes/debateaberto.git`
-  *O repositório também pode ser baixado através da URL: <https://github.com/marcosmlopes/debateaberto/tarball/master>*
+  `git clone https://github.com/pr-snas/debateaberto.git`
+  *O repositório também pode ser baixado através da URL: <https://github.com/pr-snas/debateaberto/tarball/master>*
 2. Mude para o diretório do repositório:
   `cd dadosaberto`
 3. Baixe as dependências do projeto:
@@ -31,8 +31,8 @@ Para ver ele funcionando, acesse [DebateAberto.org] (http://debateaberto.org)
   `rails server`
 9. Visite <http://localhost:3000>
 
-# Licensa
-Este projeto utiliza a licensa GNU Affero General Public License. Veja o arquivo COPYING para maiores informações.
+# Licença
+Este projeto utiliza a licença GNU Affero General Public License. Veja o arquivo COPYING para maiores informações.
 
 # Contribuir
 Sinta-se livre para contribuir enviando pull-requests, melhorando a documentação ou relatando bugs.
