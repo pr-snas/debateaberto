@@ -15,8 +15,8 @@ Para ver ele funcionando, acesse [DebateAberto.org] (http://debateaberto.org)
 
 # Como utilizar
 1. Clone o repostório git:
-  `git clone https://marcosmlopes@github.com/marcosmlopes/debateaberto.git`
-  *O repositório também pode ser baixado através da URL: <https://github.com/marcosmlopes/debateaberto/tarball/master>*
+  `git clone https://github.com/pr-snas/debateaberto.git`
+  *O repositório também pode ser baixado através da URL: <https://github.com/pr-snas/debateaberto/tarball/master>*
 2. Mude para o diretório do repositório:
   `cd dadosaberto`
 3. Baixe as dependências do projeto:
