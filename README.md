@@ -7,7 +7,7 @@ Aviso aos navegantes: O projeto DebateAberto.org ainda não integra um servidor 
 
 Para ver ele funcionando, acesse [DebateAberto.org] (http://debateaberto.org)
 
-# Depêndencias
+# Dependências
 1. [Ruby 1.9.x](http://ruby-lang.org)
 2. [RubyGems](http://rubygems.org/pages/download) *caso não tenha sido instalado junto com o ruby*
 3. [Bundler](http://gembundler.com/)
